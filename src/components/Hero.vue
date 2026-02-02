@@ -4,10 +4,10 @@
       class="flex flex-col col-span-1 items-start justify-center md:pl-10 pl-3"
     >
       <h1 class="text-6xl font-bold jdlhome text-white">
-        Nikmatnya Secangkir kopi di
+        Nikmati suasana di
         <span
           class="bg-clip-text text-transparent bg-gradient-to-l from-[#c9a570] via-[#9a6c4a] to-[#c9a570]"
-          >Koppi</span
+          >Keddai</span
         >
       </h1>
       <p
