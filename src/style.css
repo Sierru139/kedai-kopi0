@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+#home {
+  background-image: url(/img/coffeebg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jdlhome {
+  text-shadow: 0px 0px 10px rgba(99, 58, 32, 0.6);
+}
+
+.jdlnav {
+  text-shadow: 0px 0px 3px rgba(216, 182, 160, 0.9);
+  transition-duration: .4s;
+}
+
+.jdlnav:hover {
+  text-shadow: 0px 0px 10px rgba(215, 107, 39, 0.9);
+}
+
+.jdlhome span {
+  text-shadow: 0px 0px 20px #9c775dbf;
+}
+
+.cappuccino, .chocolate, .vanilla, .green-tea, .thai-tea, .taro, .nasreng, .kentang, .bakso, .indomie, .about1, .about2, .about3 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.desccappuccino, .descchocolate, .descvanilla, .descgreen-tea, .descthai-tea, .desctaro, .descnasreng, .desckentang, .descbakso, .descindomie {
+  animation: masuk 2s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cappuccino, .desccappuccino {
+  background-image: url(/img/minuman/cappuccino.jpg);
+}
+.chocolate, .descchocolate {
+  background-image: url(/img/minuman/chocolate.jpg);
+}
+.vanilla, .descvanilla {
+  background-image: url(/img/minuman/vanilla.jpg);
+}
+.thai-tea, .descthai-tea {
+  background-image: url(/img/minuman/thai-tea.jpg);
+}
+.taro, .desctaro {
+  background-image: url(/img/minuman/taro.jpg);
+}
+.green-tea, .descgreen-tea {
+  background-image: url(/img/minuman/green-tea.jpg);
+}
+
+.nasreng, .descnasreng {
+  background-image: url(/img/makanan/nasi-goreng.jpg);
+}
+
+.kentang, .desckentang {
+  background-image: url(/img/makanan/kentang-goreng.jpg);
+}
+
+.bakso, .descbakso {
+  background-image: url(/img/makanan/bakso.jpg);
+}
+
+.indomie, .descindomie {
+  background-image: url(/img/makanan/indomie.jpg);
+}
+
+.menuAnim {
+  animation: detmasuk 0.2s linear;
+}
+
+.menu-coffee {
+  transition-duration: 1s;
+}
+
+.menu-coffee:hover {
+  box-shadow: inset 0px -200px 0px rgba(55, 33, 22, 0.982);
+}
+
+@keyframes masuk {
+  0% { transform: translateY(300px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes detmasuk {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.navrespo {
+  display: none;
+}
+
+.dot {
+  background-color: #c87133d3;
+  transition: .3s;
+  animation: navmasuk .3s linear;
+}
+
+.dotgone {
+  background-color: rgba(156, 119, 93, 0);
+  transition: .3s;
+  color: white;
+}
+
+@keyframes navmasuk {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.navin {
+  animation: navmasuk 0.3s linear;
+}
+
+.about1 {
+  background-image: url(/img/close-up-cup-coffee.jpg);
+}
+.about2 {
+  background-image: url(/img/friends-drinking-kombucha.jpg);
+}
+.about3 {
+  background-image: url(/img/coffee-hands-women-s-hands-holds-hot-coffee-hands-outdoors-winter-cold-day.jpg);
+}
+
+.textabout {
+  text-shadow: 0px 0px 10px #69472fbf;
+}
