@@ -73,3 +73,27 @@
 </template>
 
 <script setup></script>
+
+<style scoped>
+.about1,
+.about2,
+.about3 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about1 {
+  background-image: url(/img/close-up-cup-coffee.jpg);
+}
+.about2 {
+  background-image: url(/img/friends-drinking-kombucha.jpg);
+}
+.about3 {
+  background-image: url(/img/coffee-hands-women-s-hands-holds-hot-coffee-hands-outdoors-winter-cold-day.jpg);
+}
+
+.textabout {
+  text-shadow: 0px 0px 10px #69472fbf;
+}
+</style>

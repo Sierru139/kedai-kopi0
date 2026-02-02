@@ -8,8 +8,14 @@
 </template>
 
 <script setup>
-import Navbar from './components/Navbar.vue'
-import Hero from './components/Hero.vue'
-import ProductSection from './components/ProductSection.vue'
-import AboutSection from './components/AboutSection.vue'
+import Navbar from "./components/Navbar.vue";
+import Hero from "./components/Hero.vue";
+import { defineAsyncComponent } from "vue";
+
+const ProductSection = defineAsyncComponent(
+  () => import("./components/ProductSection.vue"),
+);
+const AboutSection = defineAsyncComponent(
+  () => import("./components/AboutSection.vue"),
+);
 </script>

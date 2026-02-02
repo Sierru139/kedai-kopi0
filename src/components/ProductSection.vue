@@ -342,3 +342,108 @@ const setCategory = (category) => {
   selectedMenu.value = null;
 };
 </script>
+
+<style scoped>
+.cappuccino,
+.chocolate,
+.vanilla,
+.green-tea,
+.thai-tea,
+.taro,
+.nasreng,
+.kentang,
+.bakso,
+.indomie {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.desccappuccino,
+.descchocolate,
+.descvanilla,
+.descgreen-tea,
+.descthai-tea,
+.desctaro,
+.descnasreng,
+.desckentang,
+.descbakso,
+.descindomie {
+  animation: masuk 2s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cappuccino,
+.desccappuccino {
+  background-image: url(/img/minuman/cappuccino.jpg);
+}
+.chocolate,
+.descchocolate {
+  background-image: url(/img/minuman/chocolate.jpg);
+}
+.vanilla,
+.descvanilla {
+  background-image: url(/img/minuman/vanilla.jpg);
+}
+.thai-tea,
+.descthai-tea {
+  background-image: url(/img/minuman/thai-tea.jpg);
+}
+.taro,
+.desctaro {
+  background-image: url(/img/minuman/taro.jpg);
+}
+.green-tea,
+.descgreen-tea {
+  background-image: url(/img/minuman/green-tea.jpg);
+}
+
+.nasreng,
+.descnasreng {
+  background-image: url(/img/makanan/nasi-goreng.jpg);
+}
+.kentang,
+.desckentang {
+  background-image: url(/img/makanan/kentang-goreng.jpg);
+}
+.bakso,
+.descbakso {
+  background-image: url(/img/makanan/bakso.jpg);
+}
+.indomie,
+.descindomie {
+  background-image: url(/img/makanan/indomie.jpg);
+}
+
+.menuAnim {
+  animation: detmasuk 0.2s linear;
+}
+
+.menu-coffee {
+  transition-duration: 1s;
+}
+
+.menu-coffee:hover {
+  box-shadow: inset 0px -200px 0px rgba(55, 33, 22, 0.982);
+}
+
+@keyframes masuk {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes detmasuk {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
