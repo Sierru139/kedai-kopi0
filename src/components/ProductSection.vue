@@ -30,7 +30,7 @@
         </button>
       </div>
       <div
-        class="bg-[#cb9544] z-10 overflow-hidden relative h-60 flex flex-col justify-end items-end"
+        class="bg-[#cb9544] z-10 overflow-hidden relative h-80 flex flex-col justify-end items-end"
       >
         <div v-if="selectedMenu === null" class="backdrop-blur-sm p-5 mt-16">
           <h1 class="text-3xl font-semibold">Pilih Menu</h1>
@@ -103,7 +103,7 @@
             <p class="text-yellow-300 text-2xl p-1 mt-2"></p>
           </div>
           <div>
-            <div>
+            <!-- <div>
               <h4 class="text-xl">Rasa :</h4>
               <div class="grid grid-rows-2 grid-cols-2 border-b">
                 <p>Pahit <span class="text-xl text-yellow-300">0%</span></p>
@@ -111,9 +111,9 @@
                 <p>Asin <span class="text-xl text-yellow-300">0%</span></p>
                 <p>Asam <span class="text-xl text-yellow-300">0%</span></p>
               </div>
-            </div>
+            </div> -->
             <div>
-              <h3 class="text-xl mt-2">Tentang Kopi ini:</h3>
+              <h3 class="text-xl mt-2">Tentang menu ini:</h3>
               <p class="text-justify mt-2">
                 Pilih menu untuk mengetahui detailnya
               </p>

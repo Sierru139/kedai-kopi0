@@ -6,10 +6,10 @@
     ]"
   >
     <a href="#" class="font-bold italic text-2xl">
-      <span>Ked</span>
+      <span>Kedai</span>
       <span
         class="bg-clip-text text-transparent bg-gradient-to-l from-[#bfa890] to-[#a28567]"
-        >dai</span
+        >Sudut</span
       >
     </a>
 
