@@ -1,17 +1,8 @@
 <template>
   <section
     id="home"
-    class="relative h-screen md:grid grid-cols-2 flex overflow-hidden"
+    class="relative h-screen md:grid grid-cols-2 flex overflow-hidden bg-gradient-to-br from-[#1a1d25] to-[#30303b]"
   >
-    <!-- Optimized LCP Background Image -->
-    <img
-      src="/img/coffeebg.jpg"
-      alt=""
-      class="absolute inset-0 w-full h-full object-cover -z-10"
-      fetchpriority="high"
-      aria-hidden="true"
-    />
-
     <div
       class="flex flex-col col-span-1 items-start justify-center md:pl-10 pl-3 z-10"
     >
