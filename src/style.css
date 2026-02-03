@@ -13,9 +13,8 @@ body {
 }
 
 #home {
-  background-image: url(/img/coffeebg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* Image moved to Hero.vue as <img> for better LCP */
+  position: relative;
 }
 
 .jdlhome {
