@@ -3,7 +3,9 @@
     id="product"
     class="bg-gradient-to-t from-[#7d5235] to-[#8b491a] flex md:flex-row flex-col"
   >
-    <div class="md:w-[40%] w-full h-full bg-[#cb9544] flex flex-col">
+    <div
+      class="md:w-[30%] w-full h-full bg-[#cb9544] border-r border-white max-md:border-b"
+    >
       <!-- Category Switch (Persistent) -->
       <div class="top-4 left-4 z-20 flex">
         <button
@@ -28,30 +30,6 @@
         >
           Minuman
         </button>
-      </div>
-      <div
-        class="bg-[#cb9544] z-10 overflow-hidden relative h-80 flex flex-col justify-end items-end"
-      >
-        <div v-if="selectedMenu === null" class="backdrop-blur-sm p-5 mt-16">
-          <h1 class="text-3xl font-semibold">Pilih Menu</h1>
-          <p>
-            Pilih menu yang sesuai dengan selera anda, nikmati dengan sepenuh
-            hati 😊~
-          </p>
-        </div>
-
-        <template v-for="menu in filteredMenus" :key="menu.id">
-          <div
-            v-if="selectedMenu === menu.id"
-            :class="[
-              'menuDesc menuAnim text-white p-5 h-full w-full',
-              menu.descClass,
-            ]"
-          >
-            <!-- <h1 class="text-3xl font-semibold">{{ menu.name }}</h1>
-            <p>{{ menu.shortDesc }}</p> -->
-          </div>
-        </template>
       </div>
 
       <div class="h-fit md:grid hidden cursor-pointer">
@@ -91,95 +69,123 @@
       </div>
     </div>
 
-    <div class="md:h-full w-full text-white">
-      <div class="md:h-full flex">
-        <div v-if="selectedMenu === null" class="w-full p-5">
+    <!-- IMAGE REVIEW -->
+
+    <div
+      class="md:w-[30%] max-md:min-h-[220px] w-full bg-[#cb9544] z-10 overflow-hidden relative flex flex-col justify-end items-end border-r border-white max-md:border-b"
+    >
+      <div v-if="selectedMenu === null" class="backdrop-blur-sm p-5 mt-16">
+        <h1 class="text-3xl font-semibold">Pilih Menu</h1>
+        <p>
+          Pilih menu yang sesuai dengan selera anda, nikmati dengan sepenuh hati
+          😊~
+        </p>
+      </div>
+
+      <template v-for="menu in filteredMenus" :key="menu.id">
+        <div
+          v-if="selectedMenu === menu.id"
+          :class="[
+            'menuDesc menuAnim text-white p-5 h-full w-full flex-grow',
+            menu.descClass,
+          ]"
+        >
+          <!-- <h1 class="text-3xl font-semibold">{{ menu.name }}</h1>
+            <p>{{ menu.shortDesc }}</p> -->
+        </div>
+      </template>
+    </div>
+    <!-- IMAGE REVIEW END -->
+
+    <!-- IMAGE DESCRIPTION -->
+    <div class="md:h-full md:w-[40%] w-full flex">
+      <div v-if="selectedMenu === null" class="w-full p-5">
+        <div class="border-b">
+          <h3 class="font-semibold text-4xl">
+            Pilih menu untuk melihat detailnya
+          </h3>
+          <p class="text-2xl">Rp ???????</p>
+          <p class="my-1">Rating :</p>
+          <p class="text-yellow-300 text-2xl p-1 mt-2"></p>
+        </div>
+        <div>
+          <!-- <div>
+            <h4 class="text-xl">Rasa :</h4>
+            <div class="grid grid-rows-2 grid-cols-2 border-b">
+              <p>Pahit <span class="text-xl text-yellow-300">0%</span></p>
+              <p>Manis <span class="text-xl text-yellow-300">0%</span></p>
+              <p>Asin <span class="text-xl text-yellow-300">0%</span></p>
+              <p>Asam <span class="text-xl text-yellow-300">0%</span></p>
+            </div>
+          </div> -->
+          <div>
+            <h3 class="text-xl mt-2">Tentang menu ini:</h3>
+            <p class="text-justify mt-2">
+              Pilih menu untuk mengetahui detailnya
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <template v-for="menu in filteredMenus" :key="menu.id">
+        <div v-if="selectedMenu === menu.id" class="w-full p-5 menuAnim">
           <div class="border-b">
-            <h3 class="font-semibold text-4xl">
-              Pilih menu untuk melihat detailnya
-            </h3>
-            <p class="text-2xl">Rp ???????</p>
+            <h3 class="font-semibold text-4xl">{{ menu.name }}</h3>
+            <p class="text-2xl">{{ menu.price }}</p>
             <p class="my-1">Rating :</p>
-            <p class="text-yellow-300 text-2xl p-1 mt-2"></p>
+            <p class="text-yellow-300 text-2xl p-1 mt-2">
+              <i
+                v-for="n in menu.rating.full"
+                :key="'full-' + n"
+                class="fas fa-star"
+              ></i>
+              <i v-if="menu.rating.half" class="fas fa-star-half-alt"></i>
+            </p>
+            <button
+              class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md md:mt-3 mb-2 mt-3 font-semibold text-white duration-150 hover:-translate-y-[1px]"
+            >
+              Beli Sekarang
+            </button>
           </div>
           <div>
             <!-- <div>
               <h4 class="text-xl">Rasa :</h4>
-              <div class="grid grid-rows-2 grid-cols-2 border-b">
-                <p>Pahit <span class="text-xl text-yellow-300">0%</span></p>
-                <p>Manis <span class="text-xl text-yellow-300">0%</span></p>
-                <p>Asin <span class="text-xl text-yellow-300">0%</span></p>
-                <p>Asam <span class="text-xl text-yellow-300">0%</span></p>
+              <div class="grid grid-cols-2 border-b">
+                <p>
+                  Pahit
+                  <span class="text-xl text-yellow-300"
+                    >{{ menu.taste.bitter }}%</span
+                  >
+                </p>
+                <p>
+                  Manis
+                  <span class="text-xl text-yellow-300"
+                    >{{ menu.taste.sweet }}%</span
+                  >
+                </p>
+                <p>
+                  Asin
+                  <span class="text-xl text-yellow-300"
+                    >{{ menu.taste.salty }}%</span
+                  >
+                </p>
+                <p>
+                  Asam
+                  <span class="text-xl text-yellow-300"
+                    >{{ menu.taste.sour }}%</span
+                  >
+                </p>
               </div>
             </div> -->
             <div>
-              <h3 class="text-xl mt-2">Tentang menu ini:</h3>
-              <p class="text-justify mt-2">
-                Pilih menu untuk mengetahui detailnya
-              </p>
+              <h3 class="text-xl mt-2">Tentang Menu ini:</h3>
+              <p class="text-justify mt-2">{{ menu.description }}</p>
             </div>
           </div>
         </div>
-
-        <template v-for="menu in filteredMenus" :key="menu.id">
-          <div v-if="selectedMenu === menu.id" class="w-full p-5 menuAnim">
-            <div class="border-b">
-              <h3 class="font-semibold text-4xl">{{ menu.name }}</h3>
-              <p class="text-2xl">{{ menu.price }}</p>
-              <p class="my-1">Rating :</p>
-              <p class="text-yellow-300 text-2xl p-1 mt-2">
-                <i
-                  v-for="n in menu.rating.full"
-                  :key="'full-' + n"
-                  class="fas fa-star"
-                ></i>
-                <i v-if="menu.rating.half" class="fas fa-star-half-alt"></i>
-              </p>
-              <button
-                class="px-6 py-2 bg-[#8b652c] active:bg-[#6e4b20] rounded-md md:mt-3 mb-2 mt-3 font-semibold text-white duration-150 hover:-translate-y-[1px]"
-              >
-                Beli Sekarang
-              </button>
-            </div>
-            <div>
-              <!-- <div>
-                <h4 class="text-xl">Rasa :</h4>
-                <div class="grid grid-cols-2 border-b">
-                  <p>
-                    Pahit
-                    <span class="text-xl text-yellow-300"
-                      >{{ menu.taste.bitter }}%</span
-                    >
-                  </p>
-                  <p>
-                    Manis
-                    <span class="text-xl text-yellow-300"
-                      >{{ menu.taste.sweet }}%</span
-                    >
-                  </p>
-                  <p>
-                    Asin
-                    <span class="text-xl text-yellow-300"
-                      >{{ menu.taste.salty }}%</span
-                    >
-                  </p>
-                  <p>
-                    Asam
-                    <span class="text-xl text-yellow-300"
-                      >{{ menu.taste.sour }}%</span
-                    >
-                  </p>
-                </div>
-              </div> -->
-              <div>
-                <h3 class="text-xl mt-2">Tentang Menu ini:</h3>
-                <p class="text-justify mt-2">{{ menu.description }}</p>
-              </div>
-            </div>
-          </div>
-        </template>
-      </div>
+      </template>
     </div>
+    <!-- IMAGE DESCRIPTION END -->
   </section>
 </template>
 
